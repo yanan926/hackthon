@@ -6,7 +6,7 @@ import Resultpage from "./pages/resultpage";
 
 function App() {
 
-  const [person, setPerson] = useState({})
+  const [person, setPerson] = useState(null)
   const [userUrl, setUserUrl] = useState({})
   
   return (

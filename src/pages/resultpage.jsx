@@ -1,26 +1,19 @@
-import { useEffect } from "react";
 import Compare from "../components/compare/compare";
 import Celebrity from "../components/Celebrity/Celebrity";
+import '../App.scss'
 
-
-const Resultpage = ({person,userUrl}) => {
-
-  useEffect(() => {
-    // axios call 
-    console.log(person)
-
-  }, [])
-
-
+const Resultpage = ({ person, userUrl }) => {
   return (
-    <>
-    {/* <div>
-      name: {person.name}
-      value: {person.value}
-      </div> */}
-    <Compare person={person} />
-    <Celebrity gotName={person.name} userUrl={userUrl}/>
-    </>
+    <div>
+      {person ? (
+        <>
+          <Compare person={person} />
+          <Celebrity gotName={person.name} userUrl={userUrl} />
+        </>
+      ) : (
+        <h1 className="warning">Sorry, the url link format you provided is not acceptable</h1>
+      )}
+    </div>
   );
 };
 
